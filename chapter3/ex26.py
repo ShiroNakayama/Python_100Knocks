@@ -16,10 +16,11 @@ fields = result[0].split("\n|")
 # =の前後で分離して辞書として保存
 fields = fields[1:]
 standard_info = dict()
-del_ptn = re.compile(r"'{2,5}")  # ex26追加
+
+# 強調マークアップ書式　''他との区別'' or '''強調''' or '''''斜体と強調'''''
+emphasis_ptn = re.compile(r"'{2,5}")
 for f in fields:
-    # 強調マークアップを除去
-    f = del_ptn.sub("", f)  # ex26追加
+    f = emphasis_ptn.sub("", f)  # 強調マークアップを除去
     params = f.split(" = ")
     standard_info[params[0]] = params[1]
 

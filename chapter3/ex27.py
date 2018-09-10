@@ -16,17 +16,15 @@ fields = result[0].split("\n|")
 # =の前後で分離して辞書として保存
 fields = fields[1:]
 standard_info = dict()
+
+# 強調マークアップ書式　''他との区別'' or '''強調''' or '''''斜体と強調'''''
 emphasis_ptn = re.compile(r"'{2,5}")
 # 内部リンクの書式　[[記事名(#節名)(|表示文字)]]
 inner_link_ptn = re.compile(r"\[\[(.+?)(?:#.*)*(?:\|.*)*]]")
 
 for f in fields:
-    # 強調マークアップを除去
-    f = emphasis_ptn.sub("", f)
-    # 内部リンクを除去
-    m_iter = inner_link_ptn.finditer(f)
-    for m_obj in m_iter:
-        f = f.replace(m_obj.group(), m_obj.group(1))
+    f = emphasis_ptn.sub("", f)  # 強調マークアップを除去
+    f = inner_link_ptn.sub(r"\1", f)  # 内部リンクを除去
 
     params = f.split(" = ")
     standard_info[params[0]] = params[1]
