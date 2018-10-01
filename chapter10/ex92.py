@@ -3,7 +3,7 @@
 # そのベクトルと類似度が最も高い単語と，その類似度を求めよ．求めた単語と類似度は，各事例の末尾に追記せよ．
 # このプログラムを85で作成した単語ベクトル，90で作成した単語ベクトルに対して適用せよ．
 from gensim.models import word2vec
-from chapter9 import ex86, ex88
+from chapter09 import ex86, ex88
 
 input_file_name = "family.txt"
 output_file_name1 = "family_with_similarity_ex90.txt"

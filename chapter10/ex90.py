@@ -2,7 +2,7 @@
 # 81で作成したコーパスに対してword2vecを適用し，単語ベクトルを学習せよ．
 # さらに，学習した単語ベクトルの形式を変換し，86-89のプログラムを動かせ．
 from gensim.models import word2vec  # pipからword2vecモジュールが入らなかったのでgensimモジュールから読み込む
-from chapter9 import ex86, ex87, ex88
+from chapter09 import ex86, ex87, ex88
 import numpy as np
 
 model_file_name = "model"
@@ -35,7 +35,6 @@ for k, v in model.wv.vocab.items():
         print(k)
 print()
 
-# 問題の意図はおそらく単語ベクトルファイル作成だが、容量を食うのでそのまま適用することとする
 # ex86: 対象の単語ベクトルを表示する
 print("<ex86>")
 trg_word1 = "United_States"

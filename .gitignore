@@ -1,0 +1,10 @@
+
+chapter10/model
+chapter10/model.trainables.syn1neg.npy
+chapter10/model.wv.vectors.npy
+chapter09/word_context_matrix.mat
+chapter09/word_context_matrix_dim300.mat
+chapter09/test.txt
+chapter09/index_t.txt
+chapter09/corpus_raw.txt
+chapter09/corpus.txt
