@@ -38,9 +38,9 @@ def get_similar_words(trg_vector, num, matrix, matrix_index):
 if __name__ == "__main__":
     from chapter9 import ex86
     # 単語文脈行列を読み込む
-    X_300 = ex86.load_matrix()
-    index_t = ex86.load_index_t()
+    X_300 = ex86.load_matrix("word_context_matrix_dim300")
+    index_t = ex86.load_index_t("index_t.txt")
 
-    # 対象となる単語とすべての単語とのコサイン類似度を計算する
+    # 対象となる単語と類似度が高い10語を出力する
     vector = X_300[index_t["England"]]
     print(get_similar_words(vector, 10, X_300, index_t))

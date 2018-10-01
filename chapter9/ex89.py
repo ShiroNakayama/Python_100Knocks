@@ -4,8 +4,9 @@
 from chapter9 import ex86, ex88
 
 # 単語文脈行列を読み込む
-X_300 = ex86.load_matrix()
-index_t = ex86.load_index_t()
+X_300 = ex86.load_matrix("word_context_matrix_dim300")
+index_t = ex86.load_index_t("index_t.txt")
 
+# 演算したベクトルと類似度の高い10語を出力する
 vector = X_300[index_t["Spain"]] - X_300[index_t["Madrid"]] + X_300[index_t["Athens"]]
 print(ex88.get_similar_words(vector, 10, X_300, index_t))

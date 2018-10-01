@@ -26,8 +26,8 @@ if __name__ == "__main__":
     trg_word2 = "U.S"
 
     # 単語文脈行列を読み込む
-    X_300 = ex86.load_matrix()
-    index_t = ex86.load_index_t()
+    X_300 = ex86.load_matrix("word_context_matrix_dim300")
+    index_t = ex86.load_index_t("index_t.txt")
 
     # 対象2単語のコサイン類似度を計算する
     cosine_similarity = calc_cosine_similarity(X_300[index_t[trg_word1]], X_300[index_t[trg_word2]])

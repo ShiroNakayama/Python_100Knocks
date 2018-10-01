@@ -13,9 +13,9 @@ def get_context():
 
     result = []
     with open(file_name, "r", encoding=enc) as f:
+        # nbspでは単語を分けない方針とする
         words = f.read().split(" ")
         for i, w in enumerate(words):
-            # メモリが追い付かないので{1,2,3,4,5}にする
             d = random.randint(1, 5)
             for n in range(max(0, i-d), min(len(words), i+d+1)):
                 if n != i:
