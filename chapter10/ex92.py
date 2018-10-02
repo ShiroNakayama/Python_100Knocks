@@ -14,8 +14,8 @@ enc = "utf-8"
 model = word2vec.Word2Vec.load("model")
 
 # ex85の単語文脈行列
-X_300 = ex86.load_matrix("../chapter9/word_context_matrix_dim300")
-index_t = ex86.load_index_t("../chapter9/index_t.txt")
+X_300 = ex86.load_matrix("../chapter09/word_context_matrix_dim300")
+index_t = ex86.load_index_t("../chapter09/index_t.txt")
 
 with open(input_file_name, "r", encoding=enc) as in_f, \
         open(output_file_name1, "w", encoding=enc) as out_f1, \
@@ -32,7 +32,7 @@ with open(input_file_name, "r", encoding=enc) as in_f, \
         except KeyError:
             # 対象の単語がモデルに無い場合
             word = "-"
-            similarity = -1
+            similarity = 0
         # 求めた単語と類似度を追加して出力ファイルに書き込む
         print(f"{line} {word} {similarity}", file=out_f1)
 
@@ -46,6 +46,6 @@ with open(input_file_name, "r", encoding=enc) as in_f, \
         except KeyError:
             # 対象の単語がモデルに無い場合
             word = "-"
-            similarity = -1
+            similarity = 0
         # 求めた単語と類似度を追加して出力ファイルに書き込む
         print(f"{line} {word} {similarity}", file=out_f2)

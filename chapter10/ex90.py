@@ -7,7 +7,7 @@ import numpy as np
 
 model_file_name = "model"
 
-sentences = word2vec.Text8Corpus("../chapter9/corpus.txt")
+sentences = word2vec.Text8Corpus("../chapter09/corpus.txt")
 dimension = 300
 
 # モデルを学習する（次元数は300で指定、出現回数が10回未満の単語は無視）
